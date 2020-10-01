@@ -10,11 +10,11 @@
  *         inner fill (inline).
  */
 
-@cycle-fill: #0000ce;
+@cycle-fill: #bb2233;
 @cycle_lane_case:   @cycle-fill;
 @cycle_track_case:  @cycle-fill;
 @cycle_busway_case: @cycle-fill;
-@mixed-cycle-fill: #0060ff;
+@mixed-cycle-fill: #bb2233;
 @path-fill: #ff0000;
 @footway-fill: #7a5b36;
 @footway-tunnel-fill: #dcc3a6;
