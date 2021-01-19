@@ -21,7 +21,7 @@
 @bridleway-fill: #741e18;
 @icn-overlay: #ff00ff;
 @icn-shield-fill: #f6f6f6;
-@lcn-overlay: #0000ff;
+@lcn-overlay: #bb2233;
 @lcn-shield-fill: #f6f6f6;
 @motorway-trunk-case: #f6f6f6;
 @motorway-trunk-cycle-fill: #f4c3c3;
@@ -33,7 +33,7 @@
 @primary-case: #d8b267;
 @primary-fill: #f4dfc3;
 @rail-line: #888888;
-@rcn-overlay: #5500ff;
+@rcn-overlay: #bb2233;
 @rcn-shield-fill: #f6f6f6;
 @secondary-case: #b1bb5d;
 @secondary-fill: #f6f8d2;
