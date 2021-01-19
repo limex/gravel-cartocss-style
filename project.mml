@@ -63,9 +63,10 @@ Layer:
           COALESCE(
             CASE
               WHEN highway='raceway' THEN 'track'  -- render raceways as tracks
+              WHEN highway='cycleway' THEN 'track'  -- render cycleways as tracks
               WHEN highway='road' THEN 'residential'  -- render "road" as residential
               WHEN highway='footway' AND (bicycle='yes' OR bicycle='designated') THEN 'path'
-              WHEN highway='bridleway' AND (bicycle='yes' OR bicycle='designated') THEN 'path'
+              WHEN highway='bridleway' AND (bicycle='yes' OR bicycle='designated' OR bicycle IS NULL) THEN 'path'
               WHEN highway!='bus_guideway' THEN highway
               ELSE NULL
             END,
@@ -174,7 +175,7 @@ Layer:
               THEN 'cyclocross'
             WHEN surface IN ('bad', 'pebblestone', 'dirt', 'earth', 'grass', 'grass_paver', 'gravel_turf', 'ground', 'mud', 'sand')
               THEN 'mtb'
-            WHEN surface IN ('concrete:lanes', 'concrete:plates', 'gravel', 'sett', 'unhewn_cobblestone', 'cobblestone', 'wood', 'compacted', 'fine_gravel', 'woodchips')
+            WHEN surface IN ('concrete:lanes', 'concrete:plates', 'gravel', 'sett', 'unhewn_cobblestone', 'cobblestone', 'wood', 'compacted', 'fine_gravel', 'woodchips', 'unpaved')
               THEN 'cyclocross'
             ELSE NULL
           END AS surface_type,
@@ -199,6 +200,7 @@ Layer:
           AND (tags->'indoor' IS NULL OR tags->'indoor' = 'no')
           -- Tim's condition
           AND ((surface IN ('finegravel', 'fine_gravel', 'gravel', 'pebblestone', 'compacted', 'dirt', 'unpaved', 'concrete:lanes')) OR (tracktype in ('grade2')))
+          AND (bicycle IS NULL OR bicycle <> 'no')
         ORDER BY z_order
       ) AS data
   geometry: linestring

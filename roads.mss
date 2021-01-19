@@ -1295,25 +1295,9 @@
 
     line-color: @primary-fill;
     #tunnel { line-color: lighten(@primary-fill, 5%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1363,25 +1347,9 @@
 
     line-color: @primary-fill;
     #tunnel { line-color: lighten(@primary-fill, 5%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1433,25 +1401,9 @@
 
     line-color: @secondary-fill;
     #tunnel { line-color: lighten(@secondary-fill, 5%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1501,25 +1453,9 @@
 
     line-color: @secondary-fill;
     #tunnel { line-color: lighten(@secondary-fill, 5%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1570,25 +1506,9 @@
 
     line-color: @standard-fill;
     #tunnel { line-color: lighten(@standard-fill, 10%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1639,25 +1559,9 @@
     line-color: @standard-fill;
     #tunnel { line-color: lighten(@standard-fill, 10%); }
 
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1709,25 +1613,9 @@
     line-color: @standard-fill;
     #tunnel { line-color: lighten(@standard-fill, 10%); }
 
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1780,25 +1668,9 @@
 
     line-color: @standard-fill;
     #tunnel { line-color: lighten(@standard-fill, 10%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1849,25 +1721,9 @@
 
     line-color: @standard-fill;
     #tunnel { line-color: lighten(@standard-fill, 10%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1919,25 +1775,9 @@
 
     line-color: @standard-fill;
     #tunnel { line-color: lighten(@standard-fill, 10%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     [motor_vehicle='no'][can_bicycle!='no'] {
         line-color: @nomotor-fill;
         #tunnel { line-color: lighten(@nomotor-fill, 10%); }
-    }
-    [cyclestreet='yes'] {
-        line-color: @mixed-cycle-fill;
-        #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
     }
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
@@ -1988,18 +1828,6 @@
 
     line-color: @pedestrian-fill;
     #tunnel { line-color: lighten(@pedestrian-fill, 10%); }
-    [maxspeed_kmh < 33] {
-        line-color: @speed32-fill;
-        #tunnel { line-color: lighten(@speed32-fill, 10%); }
-    }
-    [maxspeed_kmh < 21] {
-        line-color: @speed20-fill;
-        #tunnel { line-color: lighten(@speed20-fill, 10%); }
-    }
-    [maxspeed_kmh < 10] {
-      line-color: @speedWalk-fill;
-      #tunnel { line-color: lighten(@speedWalk-fill, 10%); }
-    }
     //  [motor_vehicle='no'][can_bicycle!='no'][type!='pedestrian'] { //Keep pedestrian color even if motor is forbidden.
     //    line-color: @nomotor-fill;
     //    #tunnel {
@@ -2380,52 +2208,9 @@
     line-cap: round;
     line-join: round;
     line-color: @path-fill;
-    #tunnel { line-color: lighten(@path-fill, 10%); }
-
-    [can_bicycle='designated'] {
-      line-color: @mixed-cycle-fill;
-      #tunnel { line-color: lighten(@mixed-cycle-fill, 10%); }
-
-      [segregated='yes'] {
-        line-color: @cycle-fill;
-        #tunnel { line-color: lighten(@cycle-fill, 15%); }
-      }
-
-      line-width: @rdz11_cycle;
-      [oneway='no'][oneway_bicycle='no'] { line-width: @rdz11_cycle*1.5; }
-      [zoom>=12] {
-        line-width: @rdz12_cycle;
-        [oneway='no'][oneway_bicycle='no'] { line-width: @rdz12_cycle*1.5; }
-      }
-      [zoom>=13] {
-        line-width: @rdz13_cycle;
-        [oneway='no'][oneway_bicycle='no'] { line-width: @rdz13_cycle*1.5; }
-      }
-      [zoom>=14] {
-        line-width: @rdz14_cycle;
-        [oneway='no'][oneway_bicycle='no'] { line-width: @rdz14_cycle*1.5; }
-      }
-      [zoom>=15] {
-        line-width: @rdz15_cycle;
-        [oneway='no'][oneway_bicycle='no'] { line-width: @rdz15_cycle*1.5; }
-      }
-      [zoom>=16] {
-        line-width: @rdz16_cycle;
-        [oneway='no'][oneway_bicycle='no'] { line-width: @rdz16_cycle*1.5; }
-      }
-      [zoom>=17] {
-        line-width: @rdz17_cycle;
-        [oneway='no'][oneway_bicycle='no'] { line-width: @rdz17_cycle*1.5; }
-      }
-      [zoom>=18] {
-        line-width: @rdz18_cycle;
-        [oneway='no'][oneway_bicycle='no'] { line-width: @rdz18_cycle*1.5; }
-      }
-    }
 
     [can_bicycle='no'] {
       line-color: @standard-nobicycle;
-      #tunnel { line-color: lighten(@standard-nobicycle, 5%); }
     }
 
     line-width: @rdz11_path;
@@ -2639,128 +2424,6 @@
     [zoom>=16] { line-width: 3; }
     [zoom>=17] { line-width: 4; }
     [zoom>=18] { line-width: 5; }
-  }
-}
-
-// ==================================================================
-// BICYCLE ROUTES
-// ==================================================================
-
-#bicycle_routes_gen0[zoom >= 2] {
-  opacity: 0.75;
-
-  line-color: @icn-overlay;
-  [route='mtb'] {
-    line-color: @mtb-overlay;
-  }
-
-  line-width: 1;
-}
-#bicycle_routes_gen1[zoom >= 5] {
-  opacity: 0.75;
-  line-color: @icn-overlay;
-  [type='ncn'] {
-    line-color: @ncn-overlay;
-  }
-  [route='mtb'] {
-    line-color: @mtb-overlay;
-  }
-
-  [state='proposed'] {
-    line-dasharray: 6,6;
-  }
-
-  line-width: 1;
-}
-#bicycle_routes_gen2[zoom >= 8] {
-  opacity: 0.75;
-  line-color: @icn-overlay;
-  [type='ncn'] {
-    line-color: @ncn-overlay;
-  }
-  [type='rcn'] {
-    line-color: @rcn-overlay;
-  }
-  [route='mtb'] {
-    line-color: @mtb-overlay;
-  }
-
-  [state='proposed'] {
-    line-dasharray: 6,6;
-  }
-
-  line-width: 1;
-  [zoom >= 9] {
-    line-width: 2;
-  }
-  [zoom >= 10] {
-    line-width: 3;
-  }
-}
-
-#bicycle_routes_bicycle_gen3[zoom >= 11] {
-  opacity: 0.25;
-  line-color: @icn-overlay;
-  [type='ncn'] {
-    line-color: @ncn-overlay;
-  }
-  [type='rcn'] {
-    line-color: @rcn-overlay;
-  }
-  [type='lcn'] {
-    line-color: @lcn-overlay;
-  }
-
-  [state='proposed'] {
-    line-dasharray: 6,6;
-  }
-
-  line-width: 3;
-  [zoom >= 12] {
-    line-width: 4;
-  }
-  [zoom >= 14] {
-    line-width: 5;
-  }
-  [zoom >= 15] {
-    line-width: 6;
-  }
-  [zoom >= 16] {
-    line-width: 7;
-  }
-  [zoom >= 17] {
-    line-width: 10;
-  }
-  [zoom >= 18] {
-    line-width: 14;
-  }
-}
-#bicycle_routes_mtb_gen3[zoom >= 11] {
-  opacity: 0.5;
-  line-color: @mtb-overlay;
-
-  [state='proposed'] {
-    line-dasharray: 6,6;
-  }
-
-  line-width: 3;
-  [zoom >= 12] {
-    line-width: 4;
-  }
-  [zoom >= 14] {
-    line-width: 5;
-  }
-  [zoom >= 15] {
-    line-width: 6;
-  }
-  [zoom >= 16] {
-    line-width: 7;
-  }
-  [zoom >= 17] {
-    line-width: 10;
-  }
-  [zoom >= 18] {
-    line-width: 14;
   }
 }
 
