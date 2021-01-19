@@ -1883,7 +1883,8 @@
   [type='track'][zoom >= 11] {
     [surface_type='unknown'][zoom >= 13],
     [surface_type='cyclocross'][zoom >= 12],
-    [surface_type='mtb'][zoom >= 12] {
+    [surface_type='mtb'][zoom >= 12],
+    [surface_type='gravel'][zoom >= 12] {
       background/line-join: round;
       background/line-opacity: 0.4;
       background/line-color: #FFFFFF;
@@ -1904,6 +1905,9 @@
         line-dasharray: 5,2;
         [zoom>=16] { line-dasharray: 10,4; }
         [zoom>=17] { line-dasharray: 20,8; }
+      }
+      [surface_type='gravel'] {
+        line-dasharray: none;
       }
       [surface_type='mtb'] {
         line-dasharray: 2,2;
@@ -1935,7 +1939,8 @@
   [type='bridleway'][zoom >= 13] {
     [surface_type='unknown'],
     [surface_type='cyclocross'],
-    [surface_type='mtb'] {
+    [surface_type='mtb'],
+    [surface_type='gravel'] {
       background/line-join: round;
       background/line-opacity: 0.4;
       background/line-color: #FFFFFF;
@@ -1955,6 +1960,9 @@
         line-dasharray: 5,2;
         [zoom>=16] { line-dasharray: 10,4; }
         [zoom>=17] { line-dasharray: 20,8; }
+      }
+      [surface_type='gravel'] {
+        line-dasharray: none;
       }
       [surface_type='mtb'] {
         line-dasharray: 2,2;
@@ -1984,7 +1992,8 @@
   [type='footway'][zoom >= 13] {
     [surface_type='unknown'],
     [surface_type='cyclocross'],
-    [surface_type='mtb'] {
+    [surface_type='mtb'],
+    [surface_type='gravel'] {
       background/line-join: round;
       background/line-opacity: 0.4;
       background/line-color: #FFFFFF;
@@ -1997,9 +2006,9 @@
       [zoom>=18] { background/line-width: @rdz18_footway; }
 
       line-cap: butt;
-      //[surface_type='unknown'] {
-        line-dasharray: 10,1;
-      //}
+      [surface_type='gravel'] {
+        line-dasharray: none;
+      }
       [surface_type='cyclocross'] {
         line-dasharray: 5,2;
         [zoom>=16] { line-dasharray: 10,4; }
@@ -2138,6 +2147,7 @@
   {
     [surface_type='unknown'][zoom >= 13],
     [surface_type='cyclocross'][zoom >= 12],
+    [surface_type='gravel'][zoom >= 12],
     [surface_type='mtb'][zoom >= 12] {
       background/line-join: round;
       background/line-opacity: 0.4;
@@ -2197,6 +2207,9 @@
         line-dasharray: 5,2;
         [zoom>=16] { line-dasharray: 10,4; }
         [zoom>=17] { line-dasharray: 20,8; }
+      }
+      [surface_type='gravel'][zoom >= 12] {
+        line-dasharray: none;
       }
       [surface_type='mtb'][zoom >= 12] {
         line-dasharray: 2,2;

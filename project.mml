@@ -175,8 +175,10 @@ Layer:
               THEN 'cyclocross'
             WHEN surface IN ('bad', 'pebblestone', 'dirt', 'earth', 'grass', 'grass_paver', 'gravel_turf', 'ground', 'mud', 'sand')
               THEN 'mtb'
-            WHEN surface IN ('concrete:lanes', 'concrete:plates', 'gravel', 'sett', 'unhewn_cobblestone', 'cobblestone', 'wood', 'compacted', 'fine_gravel', 'woodchips', 'unpaved')
+            WHEN surface IN ('concrete:lanes', 'concrete:plates', 'gravel', 'sett', 'unhewn_cobblestone', 'cobblestone', 'wood', 'compacted', 'woodchips', 'unpaved')
               THEN 'cyclocross'
+            WHEN surface IN ('fine_gravel')
+              THEN 'gravel'
             ELSE NULL
           END AS surface_type,
           CASE
