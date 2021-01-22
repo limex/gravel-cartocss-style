@@ -205,16 +205,17 @@ Layer:
           AND (tags->'indoor' IS NULL OR tags->'indoor' = 'no')
           -- CXB conditions
           AND (
-              -- these surfaces are all suitable for grvl
+              -- these surfaces are all suitable for grvl, regardless of smoothness
               (surface IN ('finegravel', 'fine_gravel', 'gravel', 'pebblestone', 'compacted', 'concrete:lanes'))
               OR
-              (tracktype in ('grade2', 'grade3'))
+              -- these too
+              (tracktype IN ('grade2', 'grade3'))
               OR
               -- dirt/unpaved can go either way and are only considered if
               -- grade (condition above) or smoothness tell us it's reasonable
               (surface IN ('dirt', 'unpaved') AND tags->'smoothness' IN ('excellent', 'good', 'intermediate'))
           )
-          AND NOT (surface = 'sand')
+          AND (surface IS NULL OR surface <> 'sand')
         ORDER BY z_order
       ) AS data
   geometry: linestring
