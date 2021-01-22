@@ -214,6 +214,7 @@ Layer:
               -- grade (condition above) or smoothness tell us it's reasonable
               (surface IN ('dirt', 'unpaved') AND tags->'smoothness' IN ('excellent', 'good', 'intermediate'))
           )
+          AND NOT (surface = 'sand')
         ORDER BY z_order
       ) AS data
   geometry: linestring
