@@ -204,15 +204,17 @@ Layer:
           AND (covered IS NULL OR covered = 'no')
           AND (tags->'indoor' IS NULL OR tags->'indoor' = 'no')
           -- CXB conditions
+          AND (tags->'smoothness' IS NULL OR tags-> 'smoothness' IN ('excellent', 'good', 'intermediate'))
           AND (
               -- these surfaces are all suitable for grvl, regardless of smoothness
               (surface IN ('finegravel', 'fine_gravel', 'gravel', 'pebblestone', 'compacted', 'concrete:lanes'))
               OR
               -- these too
-              (tracktype IN ('grade2', 'grade3') AND (tags->'smoothness' IS NULL OR tags-> 'smoothness' IN ('excellent', 'good', 'intermediate')))
+              (tracktype IN ('grade2', 'grade3'))
               OR
               -- dirt/unpaved roads that get past the condition above
               -- can go either way and are only considered if smoothness explicitly tells us it's reasonable
+              -- (note that tracktype=grade2/3 with smoothness=null are still considered through other conditions)
               (surface IN ('dirt', 'unpaved') AND tags->'smoothness' IN ('excellent', 'good', 'intermediate'))
           )
           AND (surface IS NULL OR surface <> 'sand')
