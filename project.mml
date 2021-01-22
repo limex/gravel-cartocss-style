@@ -204,7 +204,7 @@ Layer:
           AND (covered IS NULL OR covered = 'no')
           AND (tags->'indoor' IS NULL OR tags->'indoor' = 'no')
           -- CXB conditions
-          AND (tags->'smoothness' IS NULL OR tags-> 'smoothness' IN ('excellent', 'good', 'intermediate'))
+          AND (tags->'smoothness' IS NULL OR tags-> 'smoothness' IN ('excellent', 'good', 'intermediate', 'bad', 'very_bad'))
           AND (
               -- these surfaces are all suitable for grvl, regardless of smoothness
               (surface IN ('finegravel', 'fine_gravel', 'gravel', 'pebblestone', 'compacted', 'concrete:lanes'))
