@@ -138,7 +138,8 @@ Layer:
             ELSE NULL
           END AS cycleway_right_oneway,
           CASE
-            WHEN bicycle IN ('no', 'private') THEN 'no'
+            WHEN (bicycle = 'no' AND highway IN ('track', 'path')) THEN '' -- rare to see public tracks or paths that don't allow bike access
+            WHEN bicycle IN ('no', 'private') THEN ''
             WHEN bicycle IS NOT NULL THEN bicycle
             WHEN tags->'motorroad' IN ('yes') THEN 'no'
             WHEN highway NOT IN ('motorway', 'motorway_link') AND tags->'vehicle' IN ('no', 'private') THEN 'no'
@@ -171,13 +172,15 @@ Layer:
               THEN 'cyclocross'
             WHEN tracktype IN ('grade4', 'grade5')
               THEN 'mtb'
-            WHEN tracktype IN ('grade2', 'grade3')
+            WHEN tracktype IN ('grade3')
               THEN 'cyclocross'
+            WHEN tracktype IN ('grade2')
+              THEN 'gravel'
             WHEN surface IN ('bad', 'pebblestone', 'dirt', 'earth', 'grass', 'grass_paver', 'gravel_turf', 'ground', 'mud', 'sand')
               THEN 'mtb'
-            WHEN surface IN ('concrete:lanes', 'concrete:plates', 'gravel', 'sett', 'unhewn_cobblestone', 'cobblestone', 'wood', 'compacted', 'woodchips', 'unpaved')
+            WHEN surface IN ('concrete:lanes', 'concrete:plates', 'sett', 'unhewn_cobblestone', 'cobblestone', 'wood', 'woodchips', 'unpaved')
               THEN 'cyclocross'
-            WHEN surface IN ('fine_gravel')
+            WHEN surface IN ('fine_gravel', 'compacted', 'gravel')
               THEN 'gravel'
             ELSE NULL
           END AS surface_type,
@@ -200,8 +203,17 @@ Layer:
           AND (bridge IS NULL OR bridge = 'no')
           AND (covered IS NULL OR covered = 'no')
           AND (tags->'indoor' IS NULL OR tags->'indoor' = 'no')
-          -- Tim's condition
-          AND ((surface IN ('finegravel', 'fine_gravel', 'gravel', 'pebblestone', 'compacted', 'dirt', 'unpaved', 'concrete:lanes')) OR (tracktype in ('grade2')))
+          -- CXB conditions
+          AND (
+              -- these surfaces are all suitable for grvl
+              (surface IN ('finegravel', 'fine_gravel', 'gravel', 'pebblestone', 'compacted', 'concrete:lanes'))
+              OR
+              (tracktype in ('grade2', 'grade3'))
+              OR
+              -- dirt/unpaved can go either way and are only considered if
+              -- grade (condition above) or smoothness tell us it's reasonable
+              (surface IN ('dirt', 'unpaved') AND tags->'smoothness' IN ('excellent', 'good', 'intermediate'))
+          )
         ORDER BY z_order
       ) AS data
   geometry: linestring
