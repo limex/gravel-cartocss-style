@@ -210,12 +210,11 @@ Layer:
               (surface IN ('finegravel', 'fine_gravel', 'gravel', 'pebblestone', 'compacted', 'concrete:lanes'))
               OR
               -- these too
-              (tracktype IN ('grade2', 'grade3'))
+              (tracktype IN ('grade2'))
               OR
-              -- dirt/unpaved roads that get past the condition above
-              -- can go either way and are only considered if smoothness explicitly tells us it's reasonable
-              -- (note that tracktype=grade2/3 with smoothness=null are still considered through other conditions)
-              (surface IN ('dirt', 'unpaved') AND tags->'smoothness' IN ('excellent', 'good', 'intermediate'))
+              -- dirt/unpaved roads or tracktype=grade3 can go either way and are only considered if smoothness explicitly tells us it's reasonable
+              -- (note that tracktype=grade2 with smoothness=null are still considered through other conditions)
+              ((surface IN ('dirt', 'unpaved') or tracktype = 'grade3') AND tags->'smoothness' IN ('excellent', 'good', 'intermediate'))
           )
           AND (surface IS NULL OR surface <> 'sand')
         ORDER BY z_order
