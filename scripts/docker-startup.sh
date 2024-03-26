@@ -39,7 +39,8 @@ EOF
   fi
 
   # Importing data to a database
-  osm2pgsql -c -G --hstore -d osm ~/path/to/data.osm.pbf
+  # osm2pgsql -c -G --hstore -d osm ~/path/to/data.osm.pbf
+  echo "Importing '$OSM2PGSQL_DATAFILE' data to database"
   osm2pgsql \
   --cache $OSM2PGSQL_CACHE \
   --number-processes $OSM2PGSQL_NUMPROC \
