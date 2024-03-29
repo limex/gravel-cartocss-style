@@ -1,3 +1,8 @@
+> This is work in progress! readme is beta!  
+> Status: It is serving gravel related tiles, but only on local host.  
+> Main issues: Getting large pbf processed by osm2pgsql without running out of memory and crashing.  
+> Tasks: Identify a Cloud provider, as I don't want to fuck around with nerdy linux installs and settings
+
 # Running CyclOSM with Docker
 
 [Docker](https://docker.com) is a virtualized environment running a [_Docker demon_](https://docs.docker.com/engine/docker-overview), in which you can run software without altering your host system permanently. The software components run in _containers_ that are easy to setup and tear down individually. The Docker demon can use operating-system-level virtualization (Linux, Windows) or a virtual machine (macOS, Windows).
@@ -53,13 +58,20 @@ If you want to customize and remember the values, supply it during your first im
 
 ```
 PG_WORK_MEM=128MB PG_MAINTENANCE_WORK_MEM=2GB \
-OSM2PGSQL_CACHE=2048 OSM2PGSQL_NUMPROC=4 \
+OSM2PGSQL_CACHE=2048 OSM2PGSQL_NUMPROC=3 \
 OSM2PGSQL_DATAFILE=taiwan.osm.pbf \
 docker-compose up import
 ```
 
-Variables will be remembered in `.env` if you don't have that file, and values in the file will be applied unless you manually assign them.
+### Personal Notes:
 
+OSM2PGSQL_CACHE is for the --cache parameter. Expected number, for MB (https://osm2pgsql.org/doc/manual.html)
+
+Memory Considerations:
+The amount of memory required depends on the size of your input OSM file. Whether you’re dealing with a city-sized extract or the entire planet, memory needs vary significantly.
+**As a general guideline, you should have at least as much main memory (RAM) as the size of the PBF file containing the OSM data. For processing a planet file, a minimum of 64 GB RAM is recommended, although 128 GB is even better.
+osm2pgsql won’t function with less than 2 GB RAM.**
+Variables will be remembered in `.env` if you don't have that file, and values in the file will be applied unless you manually assign them.  
 Depending on your machine and the size of the extract the import can take a while. When it is finished you should have the data necessary to render it with CyclOSM.
 
 ## Test rendering
@@ -80,8 +92,48 @@ While installing software in the containers and populating the database, the dis
 
 Docker stores its disk image by default in the home directories of the user. If you don't have enough space here, you can move it elsewhere. (E.g. macOS: Docker > Preferences > Disk).
 
+## Updating OSM Data
+According to [how-to-update-osm-data-using-osm2pgsql](https://gis.stackexchange.com/questions/191241/how-to-update-osm-data-using-osm2pgsql) delta updates are possible, but probably not effective. 
+
+## Import Regions
+osm.pbf for Europe is 28,3GB. It is probably better to personally select the needed countries, merge the file and import one file to postgis db. 
+
+https://help.openstreetmap.org/questions/71934/osmconvert-errors-while-merging-maps-in-windows-10-unknown-file-format-could-not-open-input-file-osmpbf
+
+Import to DB on i5 Core, 8GB:  
+Austria (700MB): 4819s = 80min
+France,Germany,Italy,Spain,Czech Republic,Austria,Switzerland,Slovakia,Slovenia,Hungary,Serbia,Croatia,Montenegro,Cyprus,Macedonia,Liechtenstein (17GB) = estimate = 28h
+
+
+
+## Changes to original repo
+Tiles show from Zoom 10 instead of 11 (pending)
+
+
 ## Notes
 
 This guide is based on the
 [`openstreetmap-carto`](https://github.com/gravitystorm/openstreetmap-carto/blob/master/DOCKER.md)
 Docker guide.
+
+##  Useful docker Commands
+```
+service docker status
+sudo docker-compose up import
+sudo docker-compose up kosmtik
+sudo docker container list
+sudo docker-compose stop db
+sudo docker-compose stop kosmtik
+
+# list all volumes and the sizes
+sudo docker system df -v
+
+```
+
+```
+PG_WORK_MEM=128MB PG_MAINTENANCE_WORK_MEM=2GB \
+OSM2PGSQL_CACHE=2048 OSM2PGSQL_NUMPROC=3 \
+OSM2PGSQL_DATAFILE=data.osm.pbf \
+docker-compose up import
+```
+

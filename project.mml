@@ -222,7 +222,8 @@ Layer:
   geometry: linestring
   properties:
     cache-features: true
-    minzoom: 11
+    # limex: 11 -> 10 
+    minzoom: 10
 - id: amenities-poly
   <<: *extents
   Datasource:

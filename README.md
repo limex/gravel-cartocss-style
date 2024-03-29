@@ -1,3 +1,9 @@
+## Disclaimer
+
+> This is work in progress! Find the current challenges here [`docs/DOCKER.md`](docs/DOCKER.md).  
+> Contact me via issue page if you wanna help.
+
+
 OSM Gravel Layer
 ================
 
@@ -44,22 +50,22 @@ https://www.flaticon.com/free-icon/inner-tube_1575936.
 > This is work in progress. Most lines need to be deleted or changed.
 ---
 
-CyclOSM
+Gravel Layer
 =======
 
-CyclOSM is a [CartoCSS](https://carto.com/developers/styling/cartocss/) map style
-designed with cycling in mind. It leverages
+a [CartoCSS](https://carto.com/developers/styling/cartocss/) map style
+designed with gravel cycling in mind. It leverages
 [OpenStreetMap](https://www.openstreetmap.org/) data to create a beautiful and
-practical cycling map!
+practical overlay!
 
 [![Build Status](https://api.travis-ci.org/cyclosm/cyclosm-cartocss-style.svg?branch=master)](https://travis-ci.org/cyclosm/cyclosm-cartocss-style)
 
-[![CyclOSM](https://www.cyclosm.org/images/social_media.png)](https://www.cyclosm.org/)
-
+> todo: insert pic of overlay. All gravel roads are as Red lines. 
 
 ## Demonstration
 
-A demonstration of this style is available at [https://cyclosm.org](https://cyclosm.org).
+> Adapt to CX Berlin. If they are ever back again!  
+> A demonstration of this style is available at [https://cyclosm.org](https://cyclosm.org).
 
 The tile server url is
 `https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png`. Tiles can
@@ -77,6 +83,8 @@ the support!
 
 ## Philosophy
 
+> todo: adapt!
+
 CyclOSM is a new cycle-oriented render. Contrary to
 [OpenCycleMap](http://opencyclemap.org/), this render is free and open-source
 software and aims at being more complete to take into account a wider
@@ -93,6 +101,8 @@ essential POIs when touring (emergency services, shelters, tourism, shops).
 
 
 ## Features
+
+> todo: adapt!
 
 Render:
 
@@ -122,10 +132,14 @@ Some extra information about the way OSM tags are rendered is available in
 
 ## Getting started
 
+> todo: adapt!
+
 Getting started instructions are available in the [`docs/INSTALL.md`](docs/INSTALL.md) file.
 
 
 ## Printing
+
+> todo: adapt!
 
 Instructions for printing maps with a CyclOSM render are available in
 the [`docs/PRINT.md`](docs/PRINT.md) file.
@@ -133,11 +147,15 @@ the [`docs/PRINT.md`](docs/PRINT.md) file.
 
 ## Contributing
 
+> todo: adapt!
+
 Some getting started information for contributing is available in
 [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
 
 
 ## Changelog
+
+> todo: adapt!
 
 Changes to this theme are listed in the [`CHANGELOG.md`](CHANGELOG.md) file.
 Versions are tagged with Git tags and are available through Github releases
@@ -146,6 +164,8 @@ feature.
 
 ## MapCSS validators
 
+> todo: adapt!
+
 We also offer some MapCSS checkers for bicycle tags which can be used with
 [JOSM](https://josm.openstreetmap.de/wiki/Help/Preferences/Validator) for
 instance in the [`validator`](validator) folder of this repository.
@@ -153,9 +173,13 @@ instance in the [`validator`](validator) folder of this repository.
 
 ## Licenses
 
+> todo: adapt!
+
 See [`LICENSE.md`](LICENSE.md) file.
 
 ## Links
+
+> todo: adapt!
 
 * http://www.cyclosm.org, official website.
 * http://www.cyclosm.org/legend.html, full detailed key.

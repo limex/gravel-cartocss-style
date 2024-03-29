@@ -13,3 +13,4 @@ tmp/
 .kosmtik-config.yml
 .env
 *.osm.pbf
+ssl/*
