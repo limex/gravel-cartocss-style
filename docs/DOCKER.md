@@ -23,7 +23,7 @@ You need sufficient disk space of _several Gigabytes_. Docker creates a disk ima
 If you are eager to get started here is an overview over the necessary steps.
 Read on below to get the details.
 
-* `git clone https://github.com/cyclosm/cyclosm-cartocss-style.git` to clone CyclOSM repository into a directory on your host system
+* `git clone https://github.com/limex/gravel-cartocss-style.git` to clone CyclOSM repository into a directory on your host system
 * download OpenStreetMap data in osm.pbf format to a file `data.osm.pbf` and place it within the CyclOSM directory (for example some small area from [Geofabrik](https://download.geofabrik.de/))
 * If necessary, `sudo service postgresql stop` to make sure you don't have currently running a native PostgreSQL server which would conflict with Docker's PostgreSQL server.
 * `docker-compose up import` to import the data (only necessary the first time or when you change the data file)
@@ -104,6 +104,11 @@ Import to DB on i5 Core, 8GB:
 Austria (700MB): 4819s = 80min
 France,Germany,Italy,Spain,Czech Republic,Austria,Switzerland,Slovakia,Slovenia,Hungary,Serbia,Croatia,Montenegro,Cyprus,Macedonia,Liechtenstein (17GB) = estimate = 28h
 
+Import to DB on macbook pro:
+Mallorca (37MB) 21s  
+Austria (700MB): 4819s = 80min
+France,Germany,Italy,Spain,Czech Republic,Austria,Switzerland,Slovakia,Slovenia,Hungary,Serbia,Croatia,Montenegro,Cyprus,Macedonia,Liechtenstein (17GB) = estimate = 28h
+
 
 
 ## Changes to original repo
@@ -111,6 +116,9 @@ Tiles show from Zoom 10 instead of 11 (pending)
 
 
 ## Notes
+
+On Silicon Mac start the iTerm2 with Rosetta Support.
+
 
 This guide is based on the
 [`openstreetmap-carto`](https://github.com/gravitystorm/openstreetmap-carto/blob/master/DOCKER.md)
@@ -128,12 +136,21 @@ sudo docker-compose stop kosmtik
 # list all volumes and the sizes
 sudo docker system df -v
 
-```
+# set Environment Variable to force amd64, even though it should already do b/c rosetta is set in Docker desktop
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 ```
-PG_WORK_MEM=128MB PG_MAINTENANCE_WORK_MEM=2GB \
-OSM2PGSQL_CACHE=2048 OSM2PGSQL_NUMPROC=3 \
-OSM2PGSQL_DATAFILE=data.osm.pbf \
-docker-compose up import
+
+Set this values in the .env file for more performance and bigger pbf files:
+
+```
+PG_WORK_MEM=128MB
+PG_MAINTENANCE_WORK_MEM=2GB
+OSM2PGSQL_CACHE=8192
+OSM2PGSQL_NUMPROC=3
+OSM2PGSQL_DATAFILE=mallorca.osm.pbf
 ```
 
+
+http://localhost:6789/cyclosm/tile/16/33342/24867.png
+http://localhost:6789/cyclosm/tile/{z}/{x}/{y}.png

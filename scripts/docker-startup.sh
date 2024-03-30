@@ -30,7 +30,7 @@ PG_WORK_MEM=${PG_WORK_MEM:-16MB}
 PG_MAINTENANCE_WORK_MEM=${PG_MAINTENANCE_WORK_MEM:-256MB}
 OSM2PGSQL_CACHE=${OSM2PGSQL_CACHE:-512}
 OSM2PGSQL_NUMPROC=${OSM2PGSQL_NUMPROC:-1}
-OSM2PGSQL_DATAFILE=${OSM2PGSQL_DATAFILE:-data.osm.pbf}
+OSM2PGSQL_DATAFILE=${OSM2PGSQL_DATAFILE:-.data.osm.pbf}
 EOF
     chmod a+rw .env
     export OSM2PGSQL_CACHE=${OSM2PGSQL_CACHE:-512}
@@ -41,6 +41,7 @@ EOF
   # Importing data to a database
   # osm2pgsql -c -G --hstore -d osm ~/path/to/data.osm.pbf
   echo "Importing '$OSM2PGSQL_DATAFILE' data to database"
+
   osm2pgsql \
   --cache $OSM2PGSQL_CACHE \
   --number-processes $OSM2PGSQL_NUMPROC \
